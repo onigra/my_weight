@@ -1,0 +1,41 @@
+
+<p id="notice"><%= notice %></p>
+
+<div id='container' style="height: 800px"></div>
+
+<%= javascript_include_tag "highcharts" %>
+<%= javascript_include_tag "grid-light_theme" %>
+<script type="text/javascript">
+
+var chart;
+
+function draw() {
+  var options = {
+    chart: {
+      renderTo: "container",
+    },
+    title: { text: "My Weight" },
+    xAxis: {
+      title: { text: "期間" },
+      // type: "datetime"
+      // categories: [2015, 2016]
+    },
+    yAxis: {
+      title: { text: "体重" },
+      allowDecimals: false,
+      max: 70,
+      min: 60
+    },
+    series: [{
+      name: "onigra",
+      turboThreshold: 0,
+      data: <%= @weights.map(&:weight).map(&:to_f) %> 
+    }]
+  }
+
+  chart = new Highcharts.Chart(options);
+}
+
+document.body.onload = draw();
+
+</script>
