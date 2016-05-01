@@ -22,10 +22,6 @@ RSpec.configure do |config|
     end
   end
 
-  config.before :each do
-    Sidekiq::Worker.clear_all
-  end
-
   config.after :each do
     DatabaseRewinder.clean
   end
