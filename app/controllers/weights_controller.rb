@@ -32,6 +32,7 @@ class WeightsController < ApplicationController
 
     respond_to do |format|
       if @weight.save
+        SlackClient.new(weight_params["weight"]).post
         format.html { redirect_to @weight, notice: 'Weight was successfully created.' }
         format.json { render json: @weight, status: :created }
       else
