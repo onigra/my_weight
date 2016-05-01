@@ -10,7 +10,7 @@
 
 var chart;
 
-function draw() {
+function draw(weights) {
   var options = {
     chart: {
       renderTo: "container",
@@ -30,13 +30,18 @@ function draw() {
     series: [{
       name: "onigra",
       turboThreshold: 0,
-      data: <%= @weights.map(&:weight).map(&:to_f) %> 
+      data: weights
     }]
   }
 
   chart = new Highcharts.Chart(options);
 }
 
-document.body.onload = draw();
+fetch("/weights.json")
+  .then(function(response) { return response.json(); })
+  .then(function(json) {
+    var data = json.weights.map(function(items) { return parseFloat(items.weight) });
+    document.body.ondataload = draw(data);
+})
 
 </script>
