@@ -40,7 +40,10 @@ function draw(weights) {
 fetch("/weights.json")
   .then(function(response) { return response.json(); })
   .then(function(json) {
-    var data = json.weights.map(function(items) { return parseFloat(items.weight) });
+    var data = [];
+    json.weights.forEach(function(val) {
+      data.push({ y: parseFloat(val.weight), name: val.created_at });
+    })
     document.body.ondataload = draw(data);
 })
 
