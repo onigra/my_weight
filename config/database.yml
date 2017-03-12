@@ -1,15 +1,15 @@
 default: &default
   adapter: postgresql
   encoding: utf8
+  username: my_weight
+  host: 127.0.0.1
+  port: 15432
+  password: root
   pool: 5
 
 development:
   <<: *default
   database: my_weight_development
-  username: my_weight
-  password:
-  host: localhost
-  port: 5432
   schema_search_path: public
   min_messages: notice
 
