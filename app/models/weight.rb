@@ -7,5 +7,5 @@
 #  created_at :datetime         not null
 #
 
-class Weight < ActiveRecord::Base
+class Weight < ApplicationRecord
 end
