@@ -24,7 +24,6 @@ group :development, :test do
   gem 'byebug'
   gem "awesome_print"
   gem "rspec-rails"
-  gem "rspec-parameterized"
   gem "rspec-json_matcher"
   gem "rspec-its"
   gem "spring"
