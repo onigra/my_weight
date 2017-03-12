@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
 
 gem 'webpacker', github: "rails/webpacker"
-gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem "active_model_serializers"
 gem "rambulance"
