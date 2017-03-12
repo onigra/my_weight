@@ -1,4 +1,4 @@
-class CreateWeights < ActiveRecord::Migration
+class CreateWeights < ActiveRecord::Migration[5.0]
   def change
     create_table :weights do |t|
       t.decimal :weight, null: false, precision: 10, scale: 4
