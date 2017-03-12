@@ -25,7 +25,6 @@ module MyWeight
     I18n.enforce_available_locales = true
     config.i18n.default_locale = :en
 
-    config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += ['*.js']
   end
 end
