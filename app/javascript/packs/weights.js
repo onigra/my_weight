@@ -36,3 +36,5 @@ fetch("/weights.json")
     })
     document.body.ondataload = draw(data);
 })
+
+console.log('hoge');
