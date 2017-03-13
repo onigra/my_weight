@@ -26,6 +26,5 @@ module MyWeight
     config.i18n.default_locale = :en
 
     config.assets.precompile += ['*.js']
-    config.x.webpacker[:dev_server_host] = "http://localhost:8080"
   end
 end
