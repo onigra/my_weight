@@ -1,3 +1,7 @@
+import Highcharts from 'highcharts'
+import Theme from 'highcharts/themes/grid-light'
+Theme(Highcharts)
+
 var chart;
 
 function draw(weights) {
